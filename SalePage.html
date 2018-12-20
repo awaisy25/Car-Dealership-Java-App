@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<!-- Page to buy a vehicle -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Purchase Your New Car</title>
+<link rel="stylesheet" href="../css/ProjectDesign.css">
+</head>
+<body>
+<h1>Buy Your Brand New Car</h1>
+<ul style="list-style-type:none">
+  <li><a href="../html/CoverPage.html">Home Page</a></li>
+  <li><a href="../jsp/AllCars.jsp">View all Cars</a></li>
+  <li><a href="../jsp/Deals.jsp">Deals History</a></li>
+</ul>
+
+<h2>Enter Your Information</h2>
+<!-- This form goes to Deals processor to input data into the database -->
+<Form name="Customer" method="post" action = "/DatabaseProject/DealsProcessor"
+onsubmit="return validateCustomerInfo(event)">
+<!-- user information will be put in customer table of my mysql database -->
+Name: <input type="text" name="name">
+Phone: <input type="text" name="phone">
+Email: <input type="text" name="email">
+<Div id ="errorMessage"></Div>
+<br>
+<h2>Select Your Car</h2>
+<!-- Option values are the Car_IDs in the car and car facts table -->
+<select name = "Cars">
+<option value ="1">Honda Civic LX</option>
+<option value ="2">Ford GT </option>
+<option value ="3">Infinity G35</option>
+<option value ="4">Ford Ranger</option>
+<option value ="5">Toyota Corolla</option>
+<option value ="6">Scion TC </option>
+<option value ="7">Hummer H2 </option>
+<option value ="8">BMW M5</option>
+<option value ="9">Ram 2500</option>
+<option value ="10">Jeep Liberty</option>
+<option value ="11">Honda Civic</option>
+<option value ="12">Toyota Camry</option>
+<option value ="13">Nissan GTR</option>
+<option value ="14">Nissan Rogue SL </option>
+<option value ="15">Porsche 911</option>
+</select>
+<br>
+<h2> Select the Dealer Who Helped You </h2>
+<!-- Same as selecting the car. The value for each worker is their worker_ID -->
+<select name= "Worker">
+<option value ="1">Zach Kelly </option>
+<option value ="2">Sales Worker </option>
+<option value ="3">Henry Gladstone</option>
+<option value ="4">Jenny Pierce</option>
+<option value ="5">Ryan Battle </option>
+<option value ="6">Hannah Belizaire</option>
+<option value ="7">Ryan Jenkins</option>
+<option value ="8">Peter Grenson</option>
+<option value ="9">Meg Karpet</option>
+<option value ="10">Dean Cushing</option>
+</select>
+<br>
+<input type="submit" value="submit">
+</Form>
+<script src="../JavaScript/Validator.js"></script>
+</body>
+</html>

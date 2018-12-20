@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hussain Dealer Ship</title>
+<!-- external link for css -->
+<link rel="stylesheet" href="../css/ProjectDesign.css">
+</head>
+<body>
+<h1> Welcome to Hussain Car DealerShip</h1>
+<!-- list of links for the Web site -->
+<ul style="list-style-type:none">
+  <li><a href="../jsp/AllCars.jsp">View all Cars </a></li>
+ <!-- Buy a Car link is where you go to buy a car. Input 
+ costumer information and select which vehicle and dealer.
+ Show the relationships between all entities -->
+  <li><a href="../html/SalePage.html">Buy a Car</a></li>
+  <li><a href="../jsp/Deals.jsp">Deals History</a></li>
+</ul>
+<!-- Input form for sql server  -->
+<h2>Search Car</h2>
+
+<form name = "NameCheck" method="post" action="/DatabaseProject/ProjectProcessor"
+onsubmit="return validateCoverPage(event)">
+<!-- A user can search the cars through name, type, price, year -->
+By:<select name="CarOption">
+	<option value="Model_Name">Car Name</option>
+	<option value="Model_Type">Car Type</option>
+	<option value="Company">Company</option>
+</select>
+<br>
+Enter text: <input type = "text" name = "Car">
+<br>
+<input type="submit" value ="submit">
+</form>
+<!-- Div class bottom to create separation between the forms -->
+<Div class ="bottom">
+<h2>Search by Number</h2>
+<form name="NumCheck" method="post" action = "/DatabaseProject/ProjectProcessor"
+onsubmit="return validateCoverPage2(event)">
+By:<select name ="NumberType">
+ <option value="Price">Price</option>
+ <option value="Mileage">Mileage</option>
+ <option value="HorsePower">Horsepower</option>
+ <option value="year">Year</option>
+</select>
+<select name ="Logical">
+<option value="=">Equal</option>
+<option value=">">Greater than</option>
+<option value="<">Less than</option>
+<option value=">=">Greater than or Equal</option>
+<option value="<=">Less than or Equal</option>
+</select>
+<br>
+Enter text: <input type = "text" name = "Number">
+<br>
+<input type="submit" value ="submit">
+</form>
+</Div>
+<script src="../JavaScript/Validator.js"></script>
+</body>
+</html>
